@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorAccent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="start animation by svg"
+        android:onClick="startAnimationBySVGEvent"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="start animation by  png"
+        android:onClick="startAnimationByPNGEvent"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="stop animation"
+        android:onClick="stopAnimationEvent"/>
+    <com.ben.android.frameanimation.weight.FrameAnimationView
+        android:id="@+id/id_frameview"
+        android:background="#320f0f0f"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"/>
+
+
+    <com.ben.android.frameanimation.weight.FrameAnimationView
+        android:id="@+id/id_frameview2"
+        android:background="#320f0f0f"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"/>
+</LinearLayout>
