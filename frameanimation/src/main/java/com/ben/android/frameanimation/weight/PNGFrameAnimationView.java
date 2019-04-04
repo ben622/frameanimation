@@ -69,7 +69,7 @@ public class PNGFrameAnimationView extends ImageView implements IAnimation, IRes
     };
 
     private void releaseFrameEntity() {
-      /*  if (preFrameEntity != null && preFrameEntity.getBitmap() != null && !preFrameEntity.getBitmap().isRecycled()) {
+        /*if (preFrameEntity != null && preFrameEntity.getBitmap() != null && !preFrameEntity.getBitmap().isRecycled()) {
             preFrameEntity.getBitmap().recycle();
             preFrameEntity = null;
         }*/
@@ -174,7 +174,7 @@ public class PNGFrameAnimationView extends ImageView implements IAnimation, IRes
      *
      * @param url
      */
-    public synchronized void setFrameAnimationSourceByRemote(String url, Integer... defaultAnim) {
+    public void setFrameAnimationSourceByRemote(String url, Integer... defaultAnim) {
         final int repeatCount = request.getRepeatCount();
         final int duration = request.getDuration();
         final File cacheDir = new File(getContext().getCacheDir() + File.separator + CACHE_DIR + File.separator + MD5Utils.MD5Encode(url, "utf8"));
@@ -199,6 +199,7 @@ public class PNGFrameAnimationView extends ImageView implements IAnimation, IRes
                     request.setRepeatCount(repeatCount);
                     request.setDuration(duration);
                     setFrameAnimationSourceByLocalDiskDirectory(cacheDir);
+
                     start();
                 }
 
@@ -256,7 +257,7 @@ public class PNGFrameAnimationView extends ImageView implements IAnimation, IRes
     @Override
     public void response(FrameEntity frameEntity) {
         if (getContext() instanceof Activity && ((Activity) getContext()).isFinishing()) {
-            // TODO: 2019/3/19 Activity is finishing
+            //Activity is finishing
             return;
         }
         if (frameEntity == null && !isRuning()) {

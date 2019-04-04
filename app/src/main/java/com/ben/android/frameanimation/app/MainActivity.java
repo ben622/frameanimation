@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void startAnimationByPNGEvent(View view) {
-        frameAnimationView.playFrameAnimationByUrl("http://169.1.1.23:8080/frames.zip", 30);
+        frameAnimationView.playFrameAnimationByUrl("http://169.1.1.23:8080/frames4.rar", 30);
         frameAnimationView2.playFrameAnimationByUrl("http://169.1.1.23:8080/frames2.zip", 30);
     }
 

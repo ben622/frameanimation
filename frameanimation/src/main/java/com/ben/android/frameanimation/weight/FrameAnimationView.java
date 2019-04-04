@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.Toast;
 
-
 import com.opensource.svgaplayer.SVGADrawable;
 import com.opensource.svgaplayer.SVGAImageView;
 import com.opensource.svgaplayer.SVGAParser;
@@ -18,7 +17,7 @@ import java.io.IOException;
 import java.net.URL;
 
 public class FrameAnimationView extends FrameLayout {
-    private static final String CONCAT_PNG = ".zip";
+    private static final String[] CONCAT_PNG = {".zip", ".rar"};
     private static final String CONCAT_SVG = ".svg";
 
 
@@ -69,13 +68,22 @@ public class FrameAnimationView extends FrameLayout {
         //clear runing animation
         stopAnimation();
         this.remoteUrl = remoteUrl;
-        if (remoteUrl.contains(CONCAT_PNG)) {
+        if (isContains(CONCAT_PNG, remoteUrl)) {
             //load png
             loadByPNG(duration);
         } else if (remoteUrl.contains(CONCAT_SVG)) {
             //load svg
             loadBySVG();
         }
+    }
+
+    private boolean isContains(String[] strs,String match) {
+        for (String str : strs) {
+            if (match.contains(str)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     /**
