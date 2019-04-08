@@ -1,3 +1,5 @@
+#### PNG格式支持多帧多实例动画播放，由于采用生产者消费者模型处理帧资源，对内存的开销较少。以帧资源500+为例加载PNG动画，内存消耗均为最大队列个数*处理后Bitmap内存开销。
+
 ## 在XML布局文件中
 ```
  <com.ben.android.frameanimation.weight.FrameAnimationView
